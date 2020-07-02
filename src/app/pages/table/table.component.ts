@@ -5,7 +5,6 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {PersonService} from "../../services/person.service";
 import {ToastrService} from "ngx-toastr";
 
-
 declare interface SelectRowInterface {
   productId: string;
   productName: string;
