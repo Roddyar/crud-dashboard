@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   services: {
-    baseUrl: 'http://localhost:8080',
+    baseUrl: 'https://crud-services.herokuapp.com',
     person: {
       persons: '/person',
       id: '/#id'

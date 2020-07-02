@@ -44,15 +44,15 @@ export class TableComponent implements OnInit {
     this.headerRow = ['Identificación', 'Nombre', 'Edad', 'Municipio', 'Email', 'Acciones'];
 
     this.register = this.fb.group({
-      id: ['', [Validators.required, Validators.pattern('^[0-9 ]*$')]],
-      nombres: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-      apellidos: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+      id: ['', [Validators.required, Validators.maxLength(13), Validators.pattern('^[0-9 ]*$')]],
+      nombres: ['', [Validators.required, Validators.maxLength(50), Validators.pattern('^[a-zA-Z ]*$')]],
+      apellidos: ['', [Validators.required, Validators.maxLength(50), Validators.pattern('^[a-zA-Z ]*$')]],
       edad: ['', [Validators.required]],
-      pais: ['', [Validators.required]],
-      departamento: ['', [Validators.required]],
-      municipio: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]]
+      pais: ['', [Validators.required, Validators.maxLength(50)]],
+      departamento: ['', [Validators.required , Validators.maxLength(50)]],
+      municipio: ['', [Validators.required, Validators.maxLength(50)]],
+      direccion: ['', [Validators.required, Validators.maxLength(100)]],
+      email: ['', [Validators.required, Validators.maxLength(100), Validators.email]]
     });
     this.loadPersons();
   }
