@@ -31,8 +31,7 @@ export class DashboardComponent implements OnInit {
   };
   labels: string[] = [];
 
-  constructor(private toastr: ToastrService,
-              private logsService: LogsService) {
+  constructor(private toastr: ToastrService, private logsService: LogsService) {
   }
 
   ngOnInit() {
