@@ -8,6 +8,14 @@ ngApp.use(cors());
 
 ngApp.options('*', cors());
 
+//CORS Middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  next();
+});
+
 ngApp.use(express.static('./dist/crud-dashboard'));
 
 ngApp.get('/*', function (request, response) {
