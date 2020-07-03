@@ -5,6 +5,7 @@ const path = require('path');
 const ngApp = express();
 
 ngApp.use(cors());
+
 ngApp.options('*', cors());
 
 ngApp.use(express.static('./dist/crud-dashboard'));
