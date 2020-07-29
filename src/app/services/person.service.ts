@@ -19,18 +19,28 @@ export class PersonService {
   // Http Headers
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'PUT,GET,POST,DELETE',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    })
+  }
+
+  // Http Headers
+  httpOptionsw = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*'
     })
   }
 
   // GET
   GetPersons(): Observable<PersonModel[]> {
-    return this.http.get<PersonModel[]>(this.baseUrl + this.person);
+    return this.http.get<PersonModel[]>(this.baseUrl + this.person, this.httpOptionsw);
   }
 
   // GET
   GetPerson(id): Observable<PersonModel> {
-    return this.http.get<PersonModel>(this.baseUrl + this.person + this.id.replace('#id', id));
+    return this.http.get<PersonModel>(this.baseUrl + this.person + this.id.replace('#id', id), this.httpOptionsw);
   }
 
   // POST

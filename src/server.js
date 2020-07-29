@@ -21,5 +21,3 @@ ngApp.use(express.static('./dist/crud-dashboard'));
 ngApp.get('/*', function (request, response) {
     response.sendFile(path.join(__dirname, '/dist/crud-dashboard/index.html'));
 });
-
-ngApp.listen(process.env.PORT || 8080);
